@@ -24,10 +24,10 @@ main {
     font-family: 'Rubik', sans-serif;
 }
 
-footer {
-    position: absolute;
-    bottom : 0px
-}
+/* footer {
+    position: relative;
+    
+} */
 
 .attribution {
     font-family: 'Rubik', sans-serif;
@@ -83,7 +83,7 @@ footer {
 
 .user-profil-picture img {
     width: 60px;
-    outline : 3px solid white;
+    border : 3px solid white;
     border-radius: 50%;    
 }
 
@@ -204,6 +204,50 @@ footer {
     MEDIA-QUERIES
 ========== */
 
+@media screen and (min-width:600px) and (max-width:1000px){
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 70%;
+        justify-items: center;
+
+    }
+
+    footer {
+        display: none;
+    }
+
+    .user-card {
+        grid-column : span 2;
+        width: 95%;
+    }
+
+    .card-content {
+        gap: 1.3rem;
+        grid-template-columns: 1fr 20px;
+    }
+
+    .time {
+        font-size: 2.5rem;
+        grid-column: span 2;
+    }
+
+    .last-week {
+        grid-column: span 2;
+        justify-self: start;
+    }
+
+}
+
 @media (min-width:1000px ) {
 
     body {
@@ -218,6 +262,11 @@ footer {
         grid-template-columns: repeat(4, 1fr);
         height: 50%;
         max-width: 900px;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
     }
 
     .user-card {
@@ -284,42 +333,3 @@ footer {
     }
 }
 
-@media screen and (min-width:600px) and (max-width:1000px){
-
-    body {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        
-    }
-
-    main {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        max-width: 70%;
-        justify-items: center;
-
-    }
-
-    .user-card {
-        grid-column : span 2;
-        width: 95%;
-    }
-
-    .card-content {
-        gap: 1.3rem;
-        grid-template-columns: 1fr 20px;
-    }
-
-    .time {
-        font-size: 2.5rem;
-        grid-column: span 2;
-    }
-
-    .last-week {
-        grid-column: span 2;
-        justify-self: start;
-    }
-
-}
