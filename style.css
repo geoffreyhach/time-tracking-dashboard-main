@@ -60,32 +60,31 @@ main {
 
 .user-card p {
     color:hsl(236, 100%, 87%);
-
     font-weight: 300;
-
     align-self: end;
     padding-bottom: .4rem;
-    
 }
 
 .user-name {
     color: white!important;
     font-size: 1.5rem;
-
     align-self: start!important;
     line-height: 1.5rem;
 }
 
-.frequency-btn {
+.timeframe-btn {
     background-color: transparent;
     border: 0px;
     color: hsl(235, 45%, 61%);
-
     font-size: .9rem;
 }
 
-.frequency-btn:hover {
+.timeframe-btn:hover {
     color: white;
+}
+
+.active {
+    color : white;
 }
 
 .card {
@@ -96,6 +95,8 @@ main {
     background-repeat: no-repeat;
     background-position: top -10px right;
 }
+
+
 
 .card-illustration {
     height: 40px;
@@ -110,6 +111,11 @@ main {
     row-gap: .6rem;
     background-color: hsl(235, 46%, 20%);
     border-radius: 10px;
+    transition: 200ms ease-out background-color;
+}
+
+.card-content:hover {
+    background-color: hsl(235, 46%, 30%);
 }
 
 .card-content h1 {
@@ -135,9 +141,6 @@ main {
     align-self: end;
 }
 
-.last-week::before {
-    content:"Last week - ";
-}
 
 .work {
     background-color: hsl(15, 100%, 70%);
@@ -169,7 +172,13 @@ main {
     background-image: url(./images/icon-self-care.svg);
 }
 
+footer {
+    position: absolute;
+    bottom : 0px
+}
+
 .attribution {
+    font-family: 'Rubik', sans-serif;
     text-align: center;
     color : white;
     padding : 1rem;
@@ -186,7 +195,7 @@ main {
 } 
 
 
-@media (min-width:900px) {
+@media (min-width:1000px ) {
 
     body {
         height: 100vh;
@@ -265,6 +274,48 @@ main {
         grid-column: span 4;
     }
 }
+
+@media screen and (min-width:600px) and (max-width:1000px){
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 70%;
+        justify-items: center;
+
+    }
+
+    .user-card {
+        grid-column : span 2;
+        width: 95%;
+    }
+
+    .card-content {
+        gap: 1.3rem;
+        grid-template-columns: 1fr 20px;
+    }
+
+    .time {
+        font-size: 2.5rem;
+        grid-column: span 2;
+    }
+
+    .last-week {
+        grid-column: span 2;
+        justify-self: start;
+    }
+
+}
+    
+
 
 /* 
 
