@@ -1,13 +1,28 @@
-// createCards();
 
 async function fetchData() {
     const response = await fetch('./data.json');
-    const data = await response.json(); 
-    return data
+    try {
+        const data = await response.json(); 
+        return data
+    } catch(e) {
+        console.log('error');
+        console.log(e);
+        const grid = document.querySelector('main');
+        const section = document.createElement('section');
+        section.innerHTML =
+        `<div class="card-content">
+        <h1>There's an error !</h1>
+        <p class="last-week"> ${e}</p>
+        </div>` ;
+
+        grid.append(section);
+    }
 }
 
 async function createCards(option) {
     const data = await fetchData();
+   
+
     const grid = document.querySelector('main');
     
     data.forEach(el => {
@@ -37,13 +52,11 @@ async function createCards(option) {
         
         grid.append(section);
     });
-
 };
 
 
 //styling the active timeframe btn
 let timeframeBtn = document.querySelectorAll('.timeframe-btn');
-
 timeframeBtn.forEach(el => {
     el.addEventListener('click', () => {
     timeframeBtn.forEach(el => el.classList.remove('active'));
