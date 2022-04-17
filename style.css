@@ -8,6 +8,10 @@ body {
     background-color: hsl(226, 43%, 10%);
 
 }
+
+/* =========
+    LAYOUT
+========== */
 main {
     display: flex;
     flex-direction: column;
@@ -19,6 +23,32 @@ main {
     width: 100%;
     font-family: 'Rubik', sans-serif;
 }
+
+footer {
+    position: absolute;
+    bottom : 0px
+}
+
+.attribution {
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    color : white;
+    padding : 1rem;
+}
+
+.attribution a {
+    color: hsl(235, 45%, 61%);
+    font-weight:500;
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    text-decoration: underline;
+} 
+
+/* =========
+    ELEMENTS
+========== */
 
 .user-card {
     width: 90%;
@@ -97,12 +127,8 @@ main {
     background-position: top -10px right;
 }
 
-
-
 .card-illustration {
-    height: 40px;
-    
-
+    height: 40px;  
 }
 
 .card-content {
@@ -143,7 +169,6 @@ main {
     align-self: end;
 }
 
-
 .work {
     background-color: hsl(15, 100%, 70%);
     background-image: url(./images/icon-work.svg);
@@ -174,28 +199,10 @@ main {
     background-image: url(./images/icon-self-care.svg);
 }
 
-footer {
-    position: absolute;
-    bottom : 0px
-}
 
-.attribution {
-    font-family: 'Rubik', sans-serif;
-    text-align: center;
-    color : white;
-    padding : 1rem;
-}
-
-.attribution a {
-    color: hsl(235, 45%, 61%);
-    font-weight:500;
-    text-decoration: none;
-}
-
-.attribution a:hover {
-    text-decoration: underline;
-} 
-
+/* =========
+    MEDIA-QUERIES
+========== */
 
 @media (min-width:1000px ) {
 
@@ -316,17 +323,3 @@ footer {
     }
 
 }
-    
-
-
-/* 
-
-- Light red (work): hsl(15, 100%, 70%)
-- Soft blue (play): hsl(195, 74%, 62%)
-- Light red (study): hsl(348, 100%, 68%)
-- Lime green (exercise): hsl(145, 58%, 55%)
-- Violet (social): hsl(264, 64%, 52%)
-- Soft orange (self care): hsl(43, 84%, 65%) */
-
-/* 
-font-family: 'Rubik', sans-serif; */
