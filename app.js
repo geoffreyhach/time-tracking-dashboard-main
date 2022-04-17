@@ -21,10 +21,7 @@ async function fetchData() {
 
 async function createCards(option) {
     const data = await fetchData();
-   
-
-    const grid = document.querySelector('main');
-    
+    const grid = document.querySelector('main');  
     data.forEach(el => {
         const name = el.title;
         const nameClass = name.toLowerCase().replace(' ', '-');
@@ -47,8 +44,7 @@ async function createCards(option) {
         <button class="dots">...</button>
         <p class="time">${currentTime}hrs</p>   
         <p class="last-week"> ${previousTimeText} - ${previousTime}hrs</p>
-        </div>        
-        `;
+        </div>`;
         
         grid.append(section);
     });
@@ -72,39 +68,6 @@ timeframeBtn.forEach (el => {
         cardsToDelete.forEach(el => el.remove());
         createCards(timeframeOption);
     })
-    
 });
 
 window.onload = createCards('daily');
-
-
-
-
-
-
-
-
-
-
-// console.log(fetchData());
-
-
-
-// data.forEach(activity => {
-//     const name = activity.title;
-
-//     console.log(name);
-
-// });
-
-
-
-// ` <section class="card work">
-//     <div class="card-illustration"></div>
-//     <div class="card-content">
-//     <h1></h1>
-//     <button class="dots">...</button>
-//     <p class="time">32hrs</p>   
-//     <p class="last-week">10hrs</p>
-//     </div>
-//   </section>`
